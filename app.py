@@ -369,7 +369,7 @@ with col_pidnet:
 #     except Exception as e:
 #         st.error(f"❌ Erreur DeepLabS : {e}")
 #         deeplabs_loaded = False
-
+deeplabs_loaded = True
 # Boutons de prédiction
 st.subheader("🚀 Lancement des prédictions")
 
