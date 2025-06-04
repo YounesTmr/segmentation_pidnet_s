@@ -324,7 +324,7 @@ with col_img:
     st.image(
         selected_image, 
         caption=f"Image réelle de {selected_city} - {selected_image_name}",
-        use_column_width=True
+        use_container_width=True
     )
     st.markdown("*Image originale de rue urbaine du dataset Cityscapes*")
 
@@ -332,7 +332,7 @@ with col_mask:
     st.image(
         mask_image, 
         caption=f"Masque de segmentation réel (Ground Truth)",
-        use_column_width=True
+        use_container_width=True
     )
     st.markdown("*Masque de vérité terrain avec 8 classes sémantiques*")
 
@@ -466,27 +466,27 @@ if run_pidnet and 'pidnet_pred' in locals() and pidnet_pred is not None:
     st.subheader("🔥 Résultats PIDNet-S")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.image(pidnet_colored, caption="Masque prédit par PIDNet-S", use_column_width=True)
+        st.image(pidnet_colored, caption="Masque prédit par PIDNet-S", use_container_width=True)
     with col2:
         # Afficher le ground truth
         gt_mask_indices = rgb_to_class_mask(mask_image)
         gt_colored = colorize_8classes_mask(gt_mask_indices)
-        st.image(gt_colored, caption="Masque réel (Ground Truth)", use_column_width=True)
+        st.image(gt_colored, caption="Masque réel (Ground Truth)", use_container_width=True)
     with col3:
-        st.image(pidnet_overlay, caption="Superposition PIDNet-S", use_column_width=True)
+        st.image(pidnet_overlay, caption="Superposition PIDNet-S", use_container_width=True)
 
 if run_deeplabs and 'deeplabs_pred' in locals() and deeplabs_pred is not None:
     st.subheader("🧬 Résultats DeepLabS")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.image(deeplabs_colored, caption="Masque prédit par DeepLabS", use_column_width=True)
+        st.image(deeplabs_colored, caption="Masque prédit par DeepLabS", use_container_width=True)
     with col2:
         # Afficher le ground truth
         gt_mask_indices = rgb_to_class_mask(mask_image)
         gt_colored = colorize_8classes_mask(gt_mask_indices)
-        st.image(gt_colored, caption="Masque réel (Ground Truth)", use_column_width=True)
+        st.image(gt_colored, caption="Masque réel (Ground Truth)", use_container_width=True)
     with col3:
-        st.image(deeplabs_overlay, caption="Superposition DeepLabS", use_column_width=True)
+        st.image(deeplabs_overlay, caption="Superposition DeepLabS", use_container_width=True)
 
 if run_comparison and 'pidnet_pred' in locals() and 'deeplabs_pred' in locals() and pidnet_pred is not None and deeplabs_pred is not None:
     st.subheader("⚡ Comparaison complète des modèles")
@@ -494,15 +494,15 @@ if run_comparison and 'pidnet_pred' in locals() and 'deeplabs_pred' in locals() 
     # Affichage côte à côte
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.image(selected_image, caption="Image originale", use_column_width=True)
+        st.image(selected_image, caption="Image originale", use_container_width=True)
     with col2:
         gt_mask_indices = rgb_to_class_mask(mask_image)
         gt_colored = colorize_8classes_mask(gt_mask_indices)
-        st.image(gt_colored, caption="Ground Truth", use_column_width=True)
+        st.image(gt_colored, caption="Ground Truth", use_container_width=True)
     with col3:
-        st.image(pidnet_colored, caption="PIDNet-S", use_column_width=True)
+        st.image(pidnet_colored, caption="PIDNet-S", use_container_width=True)
     with col4:
-        st.image(deeplabs_colored, caption="DeepLabS", use_column_width=True)
+        st.image(deeplabs_colored, caption="DeepLabS", use_container_width=True)
     
     # Métriques de comparaison
     st.subheader("📊 Métriques de performance")
