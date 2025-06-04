@@ -1,0 +1,45 @@
+# === Fichiers/dossiers spécifiques à ton projet ===
+data/
+model/
+pidnet_s/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# Logs
+*.log
+
+# Fichiers de configuration locaux
+*.env
+.env.*
+
+# === macOS ===
+.DS_Store
+
+# === Windows ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === VS Code / PyCharm ===
+.vscode/
+.idea/
+
+# === Autres fichiers potentiellement inutiles ===
+*.bak
+*.swp
