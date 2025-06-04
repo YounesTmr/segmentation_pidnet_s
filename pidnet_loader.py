@@ -11,7 +11,7 @@ from models.pidnet import pidnet_s
 
 def load_pidnet_model(checkpoint_path, device):
     model = pidnet_s(num_classes=8, pretrained=False)  # 8 classes
-    checkpoint = torch.load(checkpoint_path, map_location=device)
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     # Si le checkpoint est un dict complet (ex : checkpoint['model_state_dict'])
     if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
         state_dict = checkpoint['model_state_dict']

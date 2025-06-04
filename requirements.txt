@@ -4,3 +4,8 @@ torchvision
 Pillow
 numpy
 opencv-python
+plotly
+tensorflow-cpu
+matplotlib
+opencv-python-headless
+
