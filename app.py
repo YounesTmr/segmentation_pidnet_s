@@ -357,18 +357,18 @@ with col_pidnet:
         st.error(f"❌ Erreur PIDNet-S : {e}")
         pidnet_loaded = False
 
-with col_deeplabs:
-    st.markdown("**DeepLabS Enhanced**")
-    try:
-        deeplabs_model = load_deeplabs_model("model/deeplabs_enhanced_segmentation.h5")
-        deeplabs_loaded = deeplabs_model is not None
-        if deeplabs_loaded:
-            st.success("✅ DeepLabS chargé avec succès")
-        else:
-            st.error("❌ Échec du chargement DeepLabS")
-    except Exception as e:
-        st.error(f"❌ Erreur DeepLabS : {e}")
-        deeplabs_loaded = False
+# with col_deeplabs:
+#     st.markdown("**DeepLabS Enhanced**")
+#     try:
+#         deeplabs_model = load_deeplabs_model("model/deeplabs_enhanced_segmentation.h5")
+#         deeplabs_loaded = deeplabs_model is not None
+#         if deeplabs_loaded:
+#             st.success("✅ DeepLabS chargé avec succès")
+#         else:
+#             st.error("❌ Échec du chargement DeepLabS")
+#     except Exception as e:
+#         st.error(f"❌ Erreur DeepLabS : {e}")
+#         deeplabs_loaded = False
 
 # Boutons de prédiction
 st.subheader("🚀 Lancement des prédictions")
